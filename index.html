@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/frosted-glass/1.0.0/frosted-glass.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/frosted-glass@1.0.0/frosted-glass.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <style>
     .frosted-glass {
@@ -40,7 +40,7 @@
   <script>
     $(document).ready(function() {
       $.ajax({
-        url: 'https://api.github.com/users/[USERNAME]',
+        url: 'https://api.github.com/users/panguin6010',
         success: function(data) {
           // Update the profile info div with the retrieved data
           $('.profile-info').html('<img class="profile-photo" src="' + data.avatar_url + '"><div><p>Name: ' + data.name + '</p><p>Username: ' + data.login + '</p><p>Location: ' + data.location + '</p><p>Bio: ' + data.bio + '</p></div>');
