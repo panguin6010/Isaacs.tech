@@ -5,15 +5,28 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <style>
     .frosted-glass {
-      width: 500px;
+      width: 80%;
+      max-width: 500px;
       height: 400px;
       margin: auto;
+      display: flex;
+      flex-direction: column;
     }
 
     .profile-info {
       font-size: 18px;
       color: white;
       padding: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .profile-photo {
+      height: 200px;
+      width: 200px;
+      border-radius: 100%;
+      margin-right: 20px;
     }
   </style>
 </head>
@@ -25,12 +38,14 @@
   </div>
 
   <script>
-    $.ajax({
-      url: 'https://api.github.com/users/panguin6010',
-      success: function(data) {
-        // Update the profile info div with the retrieved data
-        $('.profile-info').html('<p>Name: ' + data.name + '</p><p>Username: ' + data.login + '</p><p>Location: ' + data.location + '</p><p>Bio: ' + data.bio + '</p>');
-      }
+    $(document).ready(function() {
+      $.ajax({
+        url: 'https://api.github.com/users/[USERNAME]',
+        success: function(data) {
+          // Update the profile info div with the retrieved data
+          $('.profile-info').html('<img class="profile-photo" src="' + data.avatar_url + '"><div><p>Name: ' + data.name + '</p><p>Username: ' + data.login + '</p><p>Location: ' + data.location + '</p><p>Bio: ' + data.bio + '</p></div>');
+        }
+      });
     });
   </script>
 </body>
