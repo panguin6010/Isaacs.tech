@@ -18,6 +18,9 @@
         success: function(data) {
           // Update the profile info div with the retrieved data
           $('.profile-info').html('<img class="profile-photo" src="' + data.avatar_url + '"><div class="profile-text"><h1>' + data.name + '</h1><h3>@' + data.login + '</h3></div>');
+
+          // Add fade in animation to the profile container
+          $('.profile-container').hide().fadeIn(1000);
         }
       });
     });
