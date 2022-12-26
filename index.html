@@ -1,53 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>GitHub Info</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/frosted-glass/1.0.0/frosted-glass.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+    .frosted-glass {
+      width: 500px;
+      height: 400px;
+      margin: auto;
+    }
+
+    .profile-info {
+      font-size: 18px;
+      color: white;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
-    <h1>GitHub Information</h1>
-
-    <h2>User Profile</h2>
-    <div id="user-profile">
-        Loading user profile...
+  <div class="frosted-glass">
+    <div class="profile-info">
+      <!-- Placeholder for profile information -->
     </div>
+  </div>
 
-    <h2>Repositories</h2>
-    <ul id="repositories">
-        Loading repositories...
-    </ul>
-
-    <script>
-        // Replace this with your own GitHub username
-        var username = 'panguin6010';
-
-        // Get user profile information
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'https://api.github.com/users/' + username);
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                var user = JSON.parse(xhr.responseText);
-                var userProfileDiv = document.getElementById('user-profile');
-                userProfileDiv.innerHTML = '<img src="' + user.avatar_url + '" /><h3>' + user.name + '</h3><p>' + user.bio + '</p>';
-            }
-        };
-        xhr.send();
-
-        // Get user repositories
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'https://api.github.com/users/' + username + '/repos');
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                var repos = JSON.parse(xhr.responseText);
-                var repositoriesUl = document.getElementById('repositories');
-                for (var i = 0; i < repos.length; i++) {
-                    var repo = repos[i];
-                    var li = document.createElement('li');
-                    li.innerHTML = '<a href="' + repo.html_url + '">' + repo.name + '</a>';
-                    repositoriesUl.appendChild(li);
-                }
-            }
-        };
-        xhr.send();
-    </script>
+  <script>
+    $.ajax({
+      url: 'https://api.github.com/users/panguin6010',
+      success: function(data) {
+        // Update the profile info div with the retrieved data
+        $('.profile-info').html('<p>Name: ' + data.name + '</p><p>Username: ' + data.login + '</p><p>Location: ' + data.location + '</p><p>Bio: ' + data.bio + '</p>');
+      }
+    });
+  </script>
 </body>
 </html>
