@@ -1,0 +1,26 @@
+.profile-container {
+  width: 80%;
+  max-width: 500px;
+  height: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #fafafa;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.profile-info {
+  font-size: 18px;
+  color: black;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.profile-photo {
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  margin-right: 20px;
+}
