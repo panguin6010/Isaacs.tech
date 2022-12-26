@@ -4,7 +4,7 @@ body {
 
 .profile-container {
   width: 80%;
-  max-width: 500px;
+  max-width: 800px;
   margin: 50px auto;
   display: flex;
   flex-direction: column;
@@ -42,4 +42,33 @@ body {
   margin: 0;
   font-size: 24px;
   color: grey;
+}
+
+.showcase {
+  margin: 50px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.showcase-item {
+  width: 300px;
+  margin: 20px;
+  text-align: center;
+}
+
+.showcase-item h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.showcase-item p {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.showcase-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
 }

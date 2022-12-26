@@ -9,6 +9,9 @@
     <div class="profile-info">
       <!-- Placeholder for profile information -->
     </div>
+    <div class="showcase">
+      <!-- Placeholder for showcase images and text -->
+    </div>
   </div>
 
   <script>
@@ -21,9 +24,34 @@
 
           // Add fade in animation to the profile container
           $('.profile-container').hide().fadeIn(1000);
-        }
-      });
-    });
+
+          // Dummy data for demonstration purposes
+          var projects = [
+            {
+              name: 'Project 1',
+              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl sit amet accumsan consectetur, diam lectus lobortis turpis, at dignissim risus quam a tellus. Duis mollis sem id ipsum ultricies, eu tincidunt leo blandit. Proin non metus nec metus eleifend efficitur in nec urna.',
+              image: 'https://via.placeholder.com/300x200'
+            },
+            {
+              name: 'Project 2',
+              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl sit amet accumsan consectetur, diam lectus lobortis turpis, at dignissim risus quam a tellus. Duis mollis sem id ipsum ultricies, eu tincidunt leo blandit. Proin non metus nec metus eleifend efficitur in nec urna.',
+              image: 'https://via.placeholder.com/300x200'
+            },
+            {
+              name: 'Project 3',
+              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl sit amet accumsan consectetur, diam lectus lobortis turpis, at dignissim risus quam a tellus. Duis mollis sem id ipsum ultricies, eu tincidunt leo blandit. Proin non metus nec metus eleifend efficitur in nec urna.',
+              image:'https://via.placeholder.com/300x200'
+            }
+              ];
+
+         // Iterate through the dummy data and add it to the showcase div
+      for (var i = 0; i < projects.length; i++) {
+        $('.showcase').append('<div class="showcase-item"><h2>' + projects[i].name + '</h2><p>' + projects[i].description + '</p><img src="' + projects[i].image + '"></div>');
+      }
+    }
+   });
+  });
+
   </script>
 </body>
 </html>
