@@ -17,7 +17,7 @@
         url: 'https://api.github.com/users/panguin6010',
         success: function(data) {
           // Update the profile info div with the retrieved data
-          $('.profile-info').html('<img class="profile-photo" src="' + data.avatar_url + '"><div><p>Name: ' + data.name + '</p><p>Username: ' + data.login + '</p><p>Location: ' + data.location + '</p><p>Bio: ' + data.bio + '</p></div>');
+          $('.profile-info').html('<img class="profile-photo" src="' + data.avatar_url + '"><div class="profile-text"><h1>' + data.name + '</h1><h3>@' + data.login + '</h3></div>');
         }
       });
     });
